@@ -88,7 +88,7 @@ body {
 .link-hover:hover,
 .link-hover:focus {
   color: var(--active-color);
-  stroke: var(--active-color);
+  fill: var(--active-color);
 }
 
 /* Header  */
@@ -147,6 +147,7 @@ nav {
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
   color: var(--description-text-color);
+  fill: var(--description-text-color);
   align-items: center;
 }
 
@@ -167,23 +168,18 @@ nav {
       rgba(47, 48, 58, 0.4)
     ),
     url("../images/hero.jpg");
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
 
   margin-left: auto;
   margin-right: auto;
   max-width: 1600px;
   height: 600px;
-}
-
-.hero .container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 200px;
   padding-bottom: 200px;
 }
-
-/* .hero-blok{
-
-  vertical-align:  bottom;
-} */
 
 .hero-titel {
   font-size: 44px;
@@ -244,8 +240,11 @@ svg {
 .feauters-icon {
   background-color: var(--card-color);
   border-radius: 4px;
-  padding: 25px 100px;
   margin-bottom: var(--indentation);
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .visually-hidden {
@@ -350,7 +349,7 @@ svg {
   height: 44px;
 }
 
-.team-social .social-list:not(last-child) {
+.team-social .social-list:not(:last-child) {
   margin-right: var(--description-indentation);
 }
 
@@ -376,7 +375,7 @@ svg {
 }
 
 /* section regular-customers */
-.customers .container {
+.customers {
   padding: var(--container-pading) 0;
 }
 
@@ -553,8 +552,12 @@ section Портфоліо */
   margin: 15px;
 }
 
-.portfolio-list-item:hover,
-.portfolio-list-item:focus {
+.portfolio-list-link {
+  display: block;
+}
+
+.portfolio-list-link:hover,
+.portfolio-list-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -565,7 +568,9 @@ section Портфоліо */
 
 .t-desc {
   padding: 20px 24px;
-  border: 1px solid var(--border-card);
+  border-right: 1px solid var(--border-card);
+  border-bottom: 1px solid var(--border-card);
+  border-left: 1px solid var(--border-card);
 }
 
 .portfolio-list-title {
